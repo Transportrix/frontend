@@ -5,6 +5,8 @@ import { Modal } from "@/components/ui/dialog";
 import { fadeIn } from "@/lib/animations";
 import { LuLocateFixed } from "react-icons/lu";
 import BookNowButton from "../components/BookNowButton";
+import useTransportSchedules from "@/lib/hooks/useTransportSchedules";
+import BookingsLayout from "../BookingsLayout";
 
 const Pill = ({ label }: { label: string }) => {
   return (
@@ -22,47 +24,52 @@ const Pill = ({ label }: { label: string }) => {
 const pillOptions = ["VIP BUSES", "2M EXPRESS", "STC BUSES"];
 
 function Page() {
+  // const { schedulesFromAndTo, isSchedulesFromAndToLoading } =
+  // useTransportSchedules();
   return (
-    <div className="w-full">
-      <div className="text-white  w-full flex flex-col gap-5">
-        <div className="flex items-start gap-3 flex-col">
-          <LuLocateFixed size={60} />
-          <p className="text-3xl lg:text-5xl font-bold">Fixed Booking</p>
-        </div>
+    <BookingsLayout>
+      <div className="w-full">
+        <div className="text-white  w-full flex flex-col gap-5">
+          <div className="flex items-start gap-3 flex-col">
+            <LuLocateFixed size={60} />
+            <p className="text-3xl lg:text-5xl font-bold">Fixed Booking</p>
+          </div>
 
-        <div className="">
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Nullam ipsum nisl fermentum
-            nibh sit pellentesque. Ut proin pulvinar eget nulla. Posuere mi
-            commodo fusce nunc posuere justo lorem nullam. Ac condimentum neque
-            consequat curabitur. Egestas ullamcorper malesuada in habitasse in
-            urna sit. Dui proin sodales ac duis sit pellentesque nullam proin
-            nibh. Maecenas tristique sit id cursus ornare et lobortis leo
-            sollicitudin. Euismod tristique urna etiam nullam lorem in mauris
-            arcu vel. Pellentesque et euismod eget velit sagittis iaculis.
-          </p>
-        </div>
+          <div className="">
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Nullam ipsum nisl
+              fermentum nibh sit pellentesque. Ut proin pulvinar eget nulla.
+              Posuere mi commodo fusce nunc posuere justo lorem nullam. Ac
+              condimentum neque consequat curabitur. Egestas ullamcorper
+              malesuada in habitasse in urna sit. Dui proin sodales ac duis sit
+              pellentesque nullam proin nibh. Maecenas tristique sit id cursus
+              ornare et lobortis leo sollicitudin. Euismod tristique urna etiam
+              nullam lorem in mauris arcu vel. Pellentesque et euismod eget
+              velit sagittis iaculis.
+            </p>
+          </div>
 
-        <FramerWrapper {...fadeIn} className="flex flex-wrap gap-5">
-          {pillOptions?.map((r) => (
-            <Pill label={r} key={r} />
-          ))}
-        </FramerWrapper>
+          <FramerWrapper {...fadeIn} className="flex flex-wrap gap-5">
+            {pillOptions?.map((r) => (
+              <Pill label={r} key={r} />
+            ))}
+          </FramerWrapper>
 
-        <div className="w-full flex justify-end mt-5">
-          <Modal
-            size={"5xl"}
-            trigger={<BookNowButton />}
-            body={
-              <div>
-                <FixedBookingForm />
-              </div>
-            }
-            header={<div></div>}
-          />
+          <div className="w-full flex justify-end mt-5">
+            <Modal
+              size={"5xl"}
+              trigger={<BookNowButton />}
+              body={
+                <div>
+                  <FixedBookingForm />
+                </div>
+              }
+              header={<div></div>}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </BookingsLayout>
   );
 }
 

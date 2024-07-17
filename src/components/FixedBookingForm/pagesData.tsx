@@ -1,33 +1,48 @@
 import BusDetails from "./components/BusDetails";
-import Congratulations from "./components/Congratulations";
+import BusResults from "./components/BusResults";
+import Congrutalations from "./components/Congratulations";
+import LoadingSchedules from "./components/LoadingSchedules";
 import Searching from "./components/Searching";
 import SelectASeat from "./components/SelectASeat";
 import StartHere from "./components/StartHere";
 import TellUsMore from "./components/TellUsMore";
 
 export const pages: any = [
+ 
+  // {
+  //   name: "start-here",
+  //   label: "start-here",
+  //   component: <StartHere />,
+  //   number: 1,
+  // },
   {
     name: "start-here",
     label: "start-here",
-    component: <StartHere />,
+    component: <TellUsMore />,
     number: 1,
   },
   {
-    name: "start-here",
-    label: "start-here",
-    component: <Searching />,
-    number: 1,
+    name: "bus-results",
+    label: "bus-results",
+    component: <BusResults />,
+    number: 3,
   },
   {
     name: "start-here",
     label: "start-here",
     component: <BusDetails />,
-    number: 1,
+    number: 4,
   },
   {
     name: "start-here",
     label: "start-here",
-    component: <Congratulations />,
-    number: 1,
+    component: <SelectASeat />,
+    number: 5,
+  },
+  {
+    name: "start-here",
+    label: "start-here",
+    component: <Congrutalations />,
+    number: 6,
   },
 ];

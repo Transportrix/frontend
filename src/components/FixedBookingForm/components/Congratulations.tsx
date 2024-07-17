@@ -2,7 +2,8 @@ import FramerWrapper from "@/components/FramerWrapper";
 import { fadeIn } from "@/lib/animations";
 import Image from 'next/image';
 
-function Congratulation() {
+function Congratulations() {
+    
     return ( 
         <FramerWrapper {...fadeIn} className="flex flex-col min-h-screen">
             <div className="flex flex-1 justify-center items-center space-x-4 p-8">
@@ -28,4 +29,4 @@ function Congratulation() {
     );
 }
 
-export default Congratulation;
+export default Congratulations;
