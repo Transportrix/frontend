@@ -1,4 +1,6 @@
 import Image from "next/image";
+import BackAndContinueControls from "./BackAndContinueControls";
+
 function FlexiCongratulations() {
     return ( 
         <div>
@@ -22,6 +24,8 @@ function FlexiCongratulations() {
             </div>
         </div>
     </div>
+    <BackAndContinueControls />
+
  </div>
      );
 }
