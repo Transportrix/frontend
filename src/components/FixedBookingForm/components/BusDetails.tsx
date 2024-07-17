@@ -16,7 +16,7 @@ function BusDetails() {
                         src="/Bismarkbus.png" // Ensure this image path is correct
                         alt="Bus"
                         className="bus-details-image"
-                        width={486}
+                        width={486}  j
                         height={396}
                     />
                     <div className='flex flex-col gap-5'>        
